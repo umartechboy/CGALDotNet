@@ -14,12 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CGALDotNetTest\CGALDotNetTest.csproj" />
     <ProjectReference Include="..\CGALDotNet\CGALDotNet.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="CGALDotNetGeometry">
-      <HintPath>..\..\CGALDotNetGeometry\CGALDotNetGeometry\bin\Release\netcoreapp3.1\CGALDotNetGeometry.dll</HintPath>
+      <HintPath>..\..\CGALDotNetGeometry\Binaries\CGALDotNetGeometry.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -37,9 +38,5 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy &quot;$(SolutionDir)x64\$(ConfigurationName)\CGALWrapper.dll&quot; &quot;$(ProjectDir)bin\$(ConfigurationName)\netcoreapp3.1&quot; /y&#xD;&#xA;xcopy &quot;C:\dev\vcpkg\installed\x64-windows\bin\gmp.dll&quot; &quot;$(ProjectDir)bin\$(ConfigurationName)\netcoreapp3.1&quot; /y&#xD;&#xA;xcopy &quot;C:\dev\vcpkg\installed\x64-windows\bin\mpfr-6.dll&quot; &quot;$(ProjectDir)bin\$(ConfigurationName)\netcoreapp3.1&quot; /y" />
-  </Target>
 
 </Project>
